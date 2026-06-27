@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Optimization -->
+    <title>Taquería Mi Charro | Auténtico Sabor Mexicano</title>
+    <meta name="description" content="Disfruta de los mejores tacos y platillos tradicionales mexicanos en Taquería Mi Charro. Sabor auténtico con la mejor calidad y tradición charra. ¡Ordena en línea!">
+    <meta name="keywords" content="Taquería Mi Charro, Tacos Houston, Comida Mexicana, Taquería Cerca de Mí, Ordenar Tacos, Charro Mexicano">
+    <link rel="canonical" href="https://taqueriamicharro.online">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://taqueriamicharro.online">
+    <meta property="og:title" content="Taquería Mi Charro | Auténtico Sabor Mexicano">
+    <meta property="og:description" content="Sabor mexicano auténtico con la mejor tradición charra. Ven a visitarnos o pide en línea tus tacos favoritos.">
+    <meta property="og:image" content="https://res.cloudinary.com/dzklt0a5u/image/upload/f_auto,q_auto,w_1200/v1782580092/fondo1_jyjsrz.png">
+
+    <link rel="icon" id="favicon" type="image/png" href="https://res.cloudinary.com/dzklt0a5u/image/upload/f_auto,q_auto,w_250/v1782580216/Dise%C3%B1o_sin_t%C3%ADtulo_1_bozqio.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    
+    <!-- Fuentes: Rye para la temática Charro/Mexicana, Montserrat para lectura moderna, Oleo Script para acentos -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Rye&family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Variables - Paleta Mexicana Solicitada */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Colores Exactos Solicitados */
+            --color-rosita: #E91E63;
+            --color-rojo: #D32F2F;
+            --color-morado: #7B1FA2; /* Purple */
+            --color-morado-dark: #4A148C;
+            --color-naranja: #F57C00;
+            
+            --color-dark: #2A1A1A;
+            --color-text-dark: #3a3230;
+            --color-text-light: #5a4f4d;
+            --color-cream: #FFF8F2; /* Fondo tipo tortilla/manta */
+            --color-white: #ffffff;
+            
+            --font-charro: 'Rye', serif;
+            --font-accent: 'Oleo Script', cursive;
+            --font-sans: 'Montserrat', sans-serif;
+            
+            --transition-smooth: all 0.3s ease;
+            --shadow-elegant: 0 10px 25px rgba(123, 31, 162, 0.15);
+            --shadow-hover: 0 15px 35px rgba(233, 30, 99, 0.25);
+            --border-radius-lg: 16px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-sans);
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--color-text-dark);
+            background-color: var(--color-cream);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Patrón de fondo sutil tipo papel picado / talavera */
+        .mexican-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5l5 15h15l-12 10 5 15-13-10-13 10 5-15-12-10h15z' fill='%23F57C00' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        /* Banderines de Papel Picado Superiores */
+        .banderines-container {
+            display: flex;
+            width: 100%;
+            height: 35px;
+            position: fixed;
+            top: 0;
+            z-index: 1001;
+        }
+        .banderin {
+            flex: 1;
+            height: 100%;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 70%, 0 100%);
+        }
+        .b-rosita { background-color: var(--color-rosita); }
+        .b-rojo { background-color: var(--color-rojo); }
+        .b-morado { background-color: var(--color-morado); }
+        .b-naranja { background-color: var(--color-naranja); }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; transition: var(--transition-smooth); }
+
+        /* Navbar Temática */
+        .navbar {
+            position: fixed;
+            top: 35px; /* Debajo de los banderines */
+            left: 0;
+            right: 0;
+            background-color: var(--color-morado-dark);
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border-bottom: 3px solid var(--color-naranja);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            font-family: var(--font-charro);
+            font-size: 26px;
+            color: var(--color-white);
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 0px var(--color-rojo);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--color-white);
+            letter-spacing: 1px;
+            position: relative;
+            padding: 4px 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--color-rosita);
+            transition: var(--transition-smooth);
+            border-radius: 2px;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after { width: 100%; }
+        .nav-link:hover { color: var(--color-naranja); }
+
+        /* Switcher de Idiomas (Corregido y Mejorado) */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-left: 15px;
+            border-left: 2px dashed rgba(255, 255, 255, 0.3);
+            padding-left: 25px;
+        }
+
+        .lang-btn {
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: var(--transition-smooth);
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .lang-btn:hover { color: var(--color-white); }
+        .lang-btn.active-lang { color: var(--color-naranja); text-shadow: 0 0 10px rgba(245, 124, 0, 0.5); }
+
+        .navbar-toggler {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .toggler-icon {
+            width: 30px;
+            height: 3px;
+            background-color: var(--color-white);
+            border-radius: 2px;
+            transition: var(--transition-smooth);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('https://res.cloudinary.com/dzklt0a5u/image/upload/f_auto,q_auto,w_1200/v1782580092/fondo1_jyjsrz.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            /* Gradiente usando los colores requeridos (Morado a Rojo) */
+            background: linear-gradient(135deg, rgba(74, 20, 140, 0.8) 0%, rgba(211, 47, 47, 0.65) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 5;
+            text-align: center;
+            color: var(--color-white);
+            padding: 0 24px;
+            max-width: 950px;
+            margin-top: 60px;
+        }
+
+        .hero-logo {
+            max-height: 200px;
+            width: auto;
+            display: block;
+            margin: 0 auto 20px;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+            animation: pulseLogo 3s infinite;
+        }
+
+        @keyframes pulseLogo {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-accent);
+            font-size: 32px;
+            color: var(--color-naranja);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        .hero-title {
+            font-family: var(--font-charro);
+            font-size: 75px;
+            font-weight: 400;
+            margin-bottom: 40px;
+            color: var(--color-white);
+            text-shadow: 4px 4px 0px var(--color-morado-dark), 0 10px 20px rgba(0,0,0,0.6);
+            line-height: 1.1;
+        }
+
+        /* Botones Mexicanos Vibrantes */
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .btn-custom {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 40px;
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 50px;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            border: 3px solid transparent;
+            font-family: var(--font-sans);
+        }
+
+        .btn-order-online {
+            background-color: var(--color-rojo);
+            color: var(--color-white);
+            box-shadow: 0 8px 20px rgba(211, 47, 47, 0.4);
+        }
+
+        .btn-order-online:hover {
+            background-color: var(--color-naranja);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(245, 124, 0, 0.5);
+        }
+
+        .btn-book-table {
+            background-color: transparent;
+            color: var(--color-white);
+            border-color: var(--color-rosita);
+            box-shadow: 0 8px 20px rgba(233, 30, 99, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-book-table:hover {
+            background-color: var(--color-rosita);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(233, 30, 99, 0.5);
+        }
+
+        .hero-address {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--color-white);
+            margin-top: 24px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(74, 20, 140, 0.85);
+            padding: 12px 28px;
+            border-radius: 50px;
+            border: 2px dashed var(--color-naranja);
+        }
+
+        /* Decorador estilo Diamante Charro */
+        .charro-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .charro-divider::before, .charro-divider::after {
+            content: '';
+            height: 3px;
+            width: 60px;
+            background: var(--color-rojo);
+            border-radius: 2px;
+        }
+        .charro-diamond {
+            width: 16px;
+            height: 16px;
+            background: var(--color-naranja);
+            transform: rotate(45deg);
+            outline: 2px solid var(--color-morado);
+            outline-offset: 2px;
+        }
+
+        .section-title {
+            font-family: var(--font-charro);
+            font-size: 48px;
+            font-weight: 400;
+            color: var(--color-morado-dark);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-family: var(--font-accent);
+            font-size: 28px;
+            color: var(--color-rosita);
+            text-align: center;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 24px;
+            font-size: 17px;
+            line-height: 1.8;
+            font-weight: 500;
+            text-align: justify;
+        }
+
+        .about-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        /* Marco estilo cuadro tradicional */
+        .about-image-wrapper {
+            overflow: hidden;
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 0 0 6px var(--color-white), 0 0 0 10px var(--color-morado), var(--shadow-elegant);
+            transition: var(--transition-smooth);
+            transform: rotate(-3deg);
+        }
+        
+        .about-image-wrapper:nth-child(2) {
+            transform: translateY(40px) rotate(3deg);
+            box-shadow: 0 0 0 6px var(--color-white), 0 0 0 10px var(--color-naranja), var(--shadow-elegant);
+        }
+
+        .about-image-wrapper:hover {
+            transform: scale(1.05) rotate(0deg);
+            z-index: 2;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 100px 0;
+            background-color: var(--color-white);
+            border-top: 4px dashed var(--color-rosita);
+            border-bottom: 4px dashed var(--color-rosita);
+        }
+
+        #gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 50px;
+        }
+
+        .gallery-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius-lg);
+            aspect-ratio: 1 / 1;
+            box-shadow: var(--shadow-elegant);
+            border: 4px solid var(--color-cream);
+            transition: var(--transition-smooth);
+        }
+
+        .gallery-card:hover {
+            border-color: var(--color-rojo);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-card:hover .gallery-img { transform: scale(1.12); }
+
+        /* Info Section */
+        .info-section { padding: 100px 0; }
+
+        .info-box {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--color-white);
+            padding: 60px 40px;
+            box-shadow: var(--shadow-elegant);
+            border-radius: 24px;
+            border: 5px solid var(--color-morado);
+            position: relative;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .info-item {
+            text-align: center;
+            padding: 35px 20px;
+            background: var(--color-cream);
+            border-radius: var(--border-radius-lg);
+            transition: var(--transition-smooth);
+            border-bottom: 6px solid var(--color-naranja);
+        }
+
+        .info-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--color-rosita);
+            background: white;
+        }
+
+        .info-icon-box {
+            width: 65px;
+            height: 65px;
+            margin: 0 auto 20px;
+            background-color: var(--color-rojo);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            box-shadow: 0 6px 15px rgba(211, 47, 47, 0.4);
+        }
+
+        .info-item h4 {
+            font-family: var(--font-charro);
+            font-size: 24px;
+            color: var(--color-morado-dark);
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+
+        .info-item p {
+            color: var(--color-text-dark);
+            font-size: 15px;
+            line-height: 1.8;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: var(--color-morado-dark);
+            padding: 80px 0 30px;
+            color: var(--color-white);
+            position: relative;
+        }
+
+        /* Borde decorativo footer */
+        .footer-border {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--color-rosita) 0%, var(--color-rosita) 10%,
+                var(--color-naranja) 10%, var(--color-naranja) 20%,
+                var(--color-rojo) 20%, var(--color-rojo) 30%,
+                var(--color-morado) 30%, var(--color-morado) 40%
+            );
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-charro);
+            font-size: 26px;
+            color: var(--color-naranja);
+            margin-bottom: 24px;
+            letter-spacing: 2px;
+        }
+
+        .footer-col p {
+            font-size: 15px;
+            line-height: 2;
+            margin-bottom: 12px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .social-links {
+            margin-top: 24px;
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .social-icon-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--color-rosita);
+            color: var(--color-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .social-icon-btn:hover {
+            background-color: var(--color-naranja);
+            transform: translateY(-5px) rotate(15deg);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 60px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+        }
+
+        .footer-bottom a { color: var(--color-naranja); font-weight: 700; }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+            .hero-title { font-size: 60px; }
+            .about-grid { grid-template-columns: 1fr; gap: 60px; }
+            .about-images { max-width: 650px; margin: 0 auto; }
+            .section-title { font-size: 42px; }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-toggler { display: flex; }
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background-color: var(--color-morado-dark);
+                padding: 30px;
+                gap: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+                transform: translateY(-130%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition-smooth);
+                border-bottom: 5px solid var(--color-rosita);
+            }
+            .nav-menu.active { transform: translateY(0); opacity: 1; visibility: visible; }
+            .lang-switcher {
+                margin-left: 0;
+                border-left: none;
+                padding-left: 0;
+                padding-top: 15px;
+                border-top: 1px dashed rgba(255, 255, 255, 0.2);
+                width: 100%;
+                justify-content: center;
+            }
+            .hero-title { font-size: 45px; }
+            .hero-subtitle { font-size: 24px; }
+            .info-grid { grid-template-columns: 1fr; gap: 24px; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title { font-size: 38px; }
+            .section-title { font-size: 36px; }
+            #gallery-container { grid-template-columns: 1fr; }
+            .btn-custom { width: 100%; }
+        }
+
+        ::-webkit-scrollbar { width: 12px; }
+        ::-webkit-scrollbar-track { background: var(--color-cream); }
+        ::-webkit-scrollbar-thumb { background: var(--color-morado); border-radius: 6px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--color-rojo); }
+    </style>
+
+    <script>
+        // State for dynamic images and links
+        window.MENU_TECH_STATE = {
+            "lang": "es",
+            "showReservations": true,
+            "showAbout": true,
+            "showPromo": false,
+            "showGallery": true,
+            "showCatering": false,
+            "showInfo": true,
+            "showDelivery": false,
+            "cuid": "00000000",
+            "ruid": "00000000",
+            "title": "Taquería Mi Charro",
+            "logoImg": "https://res.cloudinary.com/dzklt0a5u/image/upload/f_auto,q_auto,w_250/v1782580216/Dise%C3%B1o_sin_t%C3%ADtulo_1_bozqio.png",
+            "heroAddress": "6707 Harrisburg Blvd, Houston, TX 77011",
+            "heroImg": "https://res.cloudinary.com/dzklt0a5u/image/upload/f_auto,q_auto,w_1200/v1782580092/fondo1_jyjsrz.png",
+            "aboutImg1": "https://res.cloudinary.com/dzklt0a5u/image/upload/f_auto,q_auto,w_600/v1782580227/image_-_2026-06-20T114324.572_cwsk5s.png",
+            "aboutImg2": "https://res.cloudinary.com/dzklt0a5u/image/upload/f_auto,q_auto,w_600/v1782580230/image_-_2026-06-20T114353.382_od35qg.png",
+            "gallery": [
+                "https://res.cloudinary.com/dzklt0a5u/image/upload/f_auto,q_auto,w_500/v1782580458/Screenshot_20260623-093944_tmpwpy.png",
+                "https://res.cloudinary.com/dzklt0a5u/image/upload/f_auto,q_auto,w_500/v1782580459/Screenshot_20260623-093940_ozcguo.png",
+                "https://res.cloudinary.com/dzklt0a5u/image/upload/f_auto,q_auto,w_500/v1782580459/Screenshot_20260623-093933_tpsqhr.png",
+                "https://res.cloudinary.com/dzklt0a5u/image/upload/f_auto,q_auto,w_500/v1782580460/Screenshot_20260623-093950_jo93af.png",
+                "https://res.cloudinary.com/dzklt0a5u/image/upload/f_auto,q_auto,w_500/v1782580461/Screenshot_20260623-093956_gjvott.png",
+                "https://res.cloudinary.com/dzklt0a5u/image/upload/f_auto,q_auto,w_500/v1782580461/Screenshot_20260623-094003_sk6tzq.png",
+                "https://res.cloudinary.com/dzklt0a5u/image/upload/f_auto,q_auto,w_500/v1782580462/Screenshot_20260623-094009_pijj8i.png",
+                "https://res.cloudinary.com/dzklt0a5u/image/upload/f_auto,q_auto,w_500/v1782580462/Screenshot_20260623-094015_xbn4fu.png",
+                "https://res.cloudinary.com/dzklt0a5u/image/upload/f_auto,q_auto,w_500/v1782580463/Screenshot_20260623-094038_f2gfic.png",
+                "https://res.cloudinary.com/dzklt0a5u/image/upload/f_auto,q_auto,w_500/v1782580464/Screenshot_20260623-094045_qoklus.png",
+                "https://res.cloudinary.com/dzklt0a5u/image/upload/f_auto,q_auto,w_500/v1782580464/Screenshot_20260623-094050_svegbr.png",
+                "https://res.cloudinary.com/dzklt0a5u/image/upload/f_auto,q_auto,w_500/v1782580466/Screenshot_20260623-094100_zjlpgm.png",
+                "https://res.cloudinary.com/dzklt0a5u/image/upload/f_auto,q_auto,w_500/v1782580466/Screenshot_20260623-093906_rybv1h.png"
+            ],
+            "socials": [
+                {"platform": "instagram", "url": "https://www.instagram.com/taqueriamicharro3/"},
+                {"platform": "facebook", "url": "https://www.facebook.com/profile.php?id=61552909356170&locale=es_LA"},
+                {"platform": "tiktok", "url": "https://www.tiktok.com/@taqueria.mi.charro"}
+            ]
+        };
+    </script>
+</head>
+<body class="mexican-pattern">
+
+    <!-- Banderines Superiores (Temática Mexicana) -->
+    <div class="banderines-container">
+        <div class="banderin b-rosita"></div>
+        <div class="banderin b-rojo"></div>
+        <div class="banderin b-morado"></div>
+        <div class="banderin b-naranja"></div>
+        <div class="banderin b-rosita"></div>
+        <div class="banderin b-rojo"></div>
+        <div class="banderin b-morado"></div>
+        <div class="banderin b-naranja"></div>
+        <div class="banderin b-rosita"></div>
+        <div class="banderin b-rojo"></div>
+        <div class="banderin b-morado"></div>
+        <div class="banderin b-naranja"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="navbar-brand" id="nav-brand" data-es="Taquería Mi Charro" data-en="Taquería Mi Charro">Taquería Mi Charro</a>
+            <button class="navbar-toggler" id="navbar-toggler" aria-label="Toggle navigation">
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" data-es="Inicio" data-en="Home">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#gallery-section" class="nav-link" data-es="Galería" data-en="Gallery">Galería</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#info-section" class="nav-link" data-es="Contacto" data-en="Contact">Contacto</a>
+                </li>
+                <!-- Switcher de Idiomas Real -->
+                <li class="lang-switcher">
+                    <span id="lang-es" class="lang-btn active-lang">ES</span>
+                    <span style="color: rgba(255,255,255,0.3);">|</span>
+                    <span id="lang-en" class="lang-btn">EN</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-logo-container">
+                <img src="https://res.cloudinary.com/dzklt0a5u/image/upload/f_auto,q_auto,w_250/v1782580216/Dise%C3%B1o_sin_t%C3%ADtulo_1_bozqio.png" id="hero-logo" alt="Logo Taquería Mi Charro" class="hero-logo">
+            </div>
+            
+            <h2 class="hero-subtitle" data-es="Tradición y Sabor" data-en="Tradition and Flavor">Tradición y Sabor</h2>
+            
+            <h1 class="hero-title" id="hero-main-title" data-es="Taquería Mi Charro" data-en="Mi Charro Taqueria">Taquería Mi Charro</h1>
+            
+            <div class="hero-buttons">
+                <!-- Botones listos para traducir -->
+                <a href="https://taqueramicharro.onlineordering.io/en?locationId=1434650&orderMode=in_store_pickup" target="_blank" class="btn-custom btn-order-online">
+                    <span data-es="Ordenar en Línea" data-en="Order Online">Ordenar en Línea</span>
+                </a>
+                <a href="#info-section" class="btn-custom btn-book-table">
+                    <span data-es="Reservar una Mesa" data-en="Book a Table">Reservar una Mesa</span>
+                </a>
+            </div>
+            
+            <div class="hero-address">
+                <svg style="width:20px;height:20px;fill:var(--color-naranja)" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span id="hero-address-text">6707 Harrisburg Blvd, Houston, TX 77011</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Us Section -->
+    <section class="about-section" id="about-section">
+        <div class="container">
+            <div class="charro-divider">
+                <div class="charro-diamond"></div>
+            </div>
+            <span class="section-subtitle" data-es="Nuestra Historia" data-en="Our Story">Nuestra Historia</span>
+            <h2 class="section-title" id="about-title" data-es="Somos Taquería Mi Charro" data-en="We are Taquería Mi Charro">Somos Taquería Mi Charro</h2>
+            
+            <div class="about-grid" style="margin-top: 40px;">
+                <div class="about-text">
+                    <!-- Textos completamente bilingües -->
+                    <p data-es="En Taquería Mi Charro, nos enorgullece brindar a nuestros clientes una cocina mexicana vibrante y auténtica, elaborada con esmero y una rica tradición culinaria. Cada plato que servimos está lleno de sabores audaces y preparado para ofrecer una experiencia gastronómica memorable." 
+                       data-en="At Taquería Mi Charro, we take pride in bringing our guests a vibrant and authentic Mexican cuisine, crafted with care and a rich culinary tradition. Every dish we serve is full of bold flavors and prepared to deliver a memorable dining experience.">
+                        En Taquería Mi Charro, nos enorgullece brindar a nuestros clientes una cocina mexicana vibrante y auténtica, elaborada con esmero y una rica tradición culinaria. Cada plato que servimos está lleno de sabores audaces y preparado para ofrecer una experiencia gastronómica memorable.
+                    </p>
+                    
+                    <p data-es="El secreto de nuestro éxito es simple: crear comidas excepcionales utilizando ingredientes frescos y de alta calidad que capturan la verdadera esencia de la cocina mexicana en cada bocado." 
+                       data-en="The secret to our success is simple: creating exceptional meals using fresh, high-quality ingredients that capture the true essence of Mexican cooking in every bite.">
+                        El secreto de nuestro éxito es simple: crear comidas excepcionales utilizando ingredientes frescos y de alta calidad que capturan la verdadera esencia de la cocina mexicana en cada bocado.
+                    </p>
+                    
+                    <p data-es="Nuestra misión es ayudarte a saborear los momentos que realmente importan. Disfruta de la buena comida, una bebida refrescante y, sobre todo, relájate y siéntete como en casa. Agradecemos sinceramente tu continuo apoyo y confianza." 
+                       data-en="Our mission is to help you savor the moments that truly matter. Enjoy great food, a refreshing drink, and above all, unwind and feel at home. We sincerely appreciate your continued support and trust.">
+                        Nuestra misión es ayudarte a saborear los momentos que realmente importan. Disfruta de la buena comida, una bebida refrescante y, sobre todo, relájate y siéntete como en casa. Agradecemos sinceramente tu continuo apoyo y confianza.
+                    </p>
+                </div>
+                <div class="about-images">
+                    <div class="about-image-wrapper">
+                        <img id="about-img-1" src="https://res.cloudinary.com/dzklt0a5u/image/upload/f_auto,q_auto,w_600/v1782580227/image_-_2026-06-20T114324.572_cwsk5s.png" alt="Platillo Mexicano Auténtico 1" class="about-image" loading="lazy">
+                    </div>
+                    <div class="about-image-wrapper">
+                        <img id="about-img-2" src="https://res.cloudinary.com/dzklt0a5u/image/upload/f_auto,q_auto,w_600/v1782580230/image_-_2026-06-20T114353.382_od35qg.png" alt="Platillo Mexicano Auténtico 2" class="about-image" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery-section">
+        <div class="container">
+            <div class="charro-divider">
+                <div class="charro-diamond"></div>
+            </div>
+            <span class="section-subtitle" data-es="Amor al Primer Bocado" data-en="Love At First Bite">Amor al Primer Bocado</span>
+            <h2 class="section-title" id="gallery-title" data-es="Deliciosa Comida Mexicana" data-en="Delicious Mexican Food">Deliciosa Comida Mexicana</h2>
+            
+            <div id="gallery-container">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info-section" id="info-section">
+        <div class="container">
+            <div class="info-box">
+                <div class="charro-divider">
+                    <div class="charro-diamond"></div>
+                </div>
+                <span class="section-subtitle" data-es="Visítanos" data-en="Visit Us">Visítanos</span>
+                <h2 class="section-title" id="info-title" data-es="Información" data-en="Information">Información</h2>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-icon-box">
+                            <svg style="width:32px;height:32px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg>
+                        </div>
+                        <h4 data-es="Horarios" data-en="Opening Hours">Horarios</h4>
+                        <p id="info-hours" data-es="Lunes – Jueves: 7:00 AM – 10:00 PM<br>Viernes: 7:00 AM – 11:00 PM<br>Sábado – Domingo: 7:00 AM – 10:00 PM" data-en="Monday – Thursday: 7:00 AM – 10:00 PM<br>Friday: 7:00 AM – 11:00 PM<br>Saturday – Sunday: 7:00 AM – 10:00 PM">
+                            Lunes – Jueves: 7:00 AM – 10:00 PM<br>Viernes: 7:00 AM – 11:00 PM<br>Sábado – Domingo: 7:00 AM – 10:00 PM
+                        </p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon-box">
+                            <svg style="width:32px;height:32px;fill:currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        </div>
+                        <h4 data-es="Teléfono" data-en="Phone">Teléfono</h4>
+                        <p id="info-phone">713-923-1200</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon-box">
+                            <svg style="width:32px;height:32px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        </div>
+                        <h4 data-es="Dirección" data-en="Address">Dirección</h4>
+                        <p id="info-address">6707 Harrisburg Blvd, Houston, TX 77011</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-border"></div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 data-es="Contáctanos" data-en="Contact Us">Contáctanos</h4>
+                    <p id="footer-address">6707 Harrisburg Blvd, Houston, TX 77011</p>
+                    <p id="footer-phone"><span data-es="Teléfono:" data-en="Phone:">Teléfono:</span> 713-923-1200</p>
+                    <div id="social-icons" class="social-links">
+                        <!-- Iconos de redes sociales inyectados por JS (incluye TikTok) -->
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 data-es="Horarios de Atención" data-en="Opening Hours">Horarios de Atención</h4>
+                    <p id="footer-hours" data-es="Lunes – Jueves: 7:00 AM – 10:00 PM<br>Viernes: 7:00 AM – 11:00 PM<br>Sábado – Domingo: 7:00 AM – 10:00 PM" data-en="Monday – Thursday: 7:00 AM – 10:00 PM<br>Friday: 7:00 AM – 11:00 PM<br>Saturday – Sunday: 7:00 AM – 10:00 PM">
+                        Lunes – Jueves: 7:00 AM – 10:00 PM<br>Viernes: 7:00 AM – 11:00 PM<br>Sábado – Domingo: 7:00 AM – 10:00 PM
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © <span id="copyright-year"></span> Taquería Mi Charro. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span> Powered by <a href="https://menutech.xyz/" target="_blank">Menutech</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lógica JavaScript Principal de Traducción e Interfaz -->
+    <script>
+        const optimizeCloudinaryUrl = (url, options = {}) => {
+            if (!url || typeof url !== 'string' || !url.includes('res.cloudinary.com')) return url;
+            const [baseUrl, hash] = url.split('#');
+            if (!baseUrl.includes('/upload/')) return url;
+            const parts = baseUrl.split('/upload/');
+            let transformations = ['f_auto', 'q_auto'];
+            if (options.width) transformations.push(`w_${options.width}`);
+            if (options.height) transformations.push(`h_${options.height}`);
+            if (options.crop) transformations.push(`c_${options.crop}`);
+            const transformationString = transformations.join(',');
+            const optimizedUrl = `${parts[0]}/upload/${transformationString}/${parts[1]}`;
+            return hash ? `${optimizedUrl}#${hash}` : optimizedUrl;
+        };
+
+        const SOCIAL_ICONS = {
+            instagram: `<svg style="width:24px;height:24px;fill:currentColor" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>`,
+            facebook: `<svg style="width:24px;height:24px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/></svg>`,
+            tiktok: `<svg style="width:22px;height:22px;fill:currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.27-1.15 4.43-2.92 5.87-1.76 1.45-4.14 1.98-6.4 1.52-2.28-.45-4.22-1.92-5.32-3.95-1.1-2.02-1.17-4.52-.3-6.6 1.05-2.52 3.6-4.18 6.34-4.2 0 1.37.01 2.73-.01 4.1-.96.06-1.92.48-2.6 1.19-.68.72-1.01 1.76-.84 2.75.18.99.9 1.83 1.84 2.19.95.37 2.06.26 2.9-.27.84-.52 1.34-1.46 1.38-2.45.07-3.92.03-7.85.03-11.78.01-1.74-.01-3.48.01-5.21Z"/></svg>`
+        };
+
+        let currentLang = 'es';
+
+        // Lógica de Traducción 100% Funcional basada en atributos HTML
+        function applyLanguage(lang) {
+            currentLang = lang;
+            
+            // Traducir todos los elementos con atributos data-es y data-en
+            document.querySelectorAll('[data-es]').forEach(el => {
+                if(el.hasAttribute(`data-${lang}`)) {
+                    el.innerHTML = el.getAttribute(`data-${lang}`);
+                }
+            });
+
+            // Actualizar Botones de Idioma
+            const esBtn = document.getElementById('lang-es');
+            const enBtn = document.getElementById('lang-en');
+            
+            if (!esBtn || !enBtn) return;
+
+            if (lang === 'es') {
+                esBtn.classList.add('active-lang');
+                enBtn.classList.remove('active-lang');
+            } else {
+                enBtn.classList.add('active-lang');
+                esBtn.classList.remove('active-lang');
+            }
+        }
+
+        // Lógica de Inicialización (sin sobrescribir texto multilingüe)
+        function initApp(data) {
+            if (!data) return;
+
+            // Logos e Imágenes Globales
+            if (data.logoImg) {
+                const logo = document.getElementById('hero-logo');
+                const favicon = document.getElementById('favicon');
+                const optimizedLogo = optimizeCloudinaryUrl(data.logoImg, { width: 300 });
+                if (logo) logo.src = optimizedLogo;
+                if (favicon) favicon.href = optimizedLogo;
+            }
+
+            if (data.heroImg) {
+                const heroSection = document.getElementById('hero-section');
+                if (heroSection) heroSection.style.backgroundImage = `url('${optimizeCloudinaryUrl(data.heroImg, { width: 1200 })}')`;
+            }
+
+            if (data.aboutImg1) {
+                const img = document.getElementById('about-img-1');
+                if (img) img.src = optimizeCloudinaryUrl(data.aboutImg1, { width: 600 });
+            }
+            if (data.aboutImg2) {
+                const img = document.getElementById('about-img-2');
+                if (img) img.src = optimizeCloudinaryUrl(data.aboutImg2, { width: 600 });
+            }
+
+            // Datos de Contacto Dinámicos (Sin romper la traducción)
+            if (data.contact) {
+                const phoneElements = [document.getElementById('info-phone'), document.getElementById('footer-phone')];
+                const addressElements = [document.getElementById('hero-address-text'), document.getElementById('info-address'), document.getElementById('footer-address')];
+                
+                if(data.contact.phone) {
+                    phoneElements.forEach(el => { 
+                        if(el && el.id === 'footer-phone') {
+                            el.innerHTML = `<span data-es="Teléfono:" data-en="Phone:">${currentLang === 'es' ? 'Teléfono:' : 'Phone:'}</span> ${data.contact.phone}`;
+                        } else if (el) {
+                            el.textContent = data.contact.phone; 
+                        }
+                    });
+                }
+                if(data.contact.address) {
+                    addressElements.forEach(el => { if(el) el.textContent = data.contact.address; });
+                }
+            }
+
+            // Redes Sociales (Asegura TikTok)
+            if (data.socials) {
+                const container = document.getElementById('social-icons');
+                if (container) {
+                    container.innerHTML = data.socials.map(s => `
+                        <a href="${s.url}" target="_blank" class="social-icon-btn">
+                            ${SOCIAL_ICONS[s.platform] || ''}
+                        </a>
+                    `).join('');
+                }
+            }
+
+            // Galería
+            if (data.gallery) {
+                const container = document.getElementById('gallery-container');
+                if (container) {
+                    container.innerHTML = data.gallery.map(img => `
+                        <div class="gallery-card">
+                            <img src="${optimizeCloudinaryUrl(img, { width: 500, height: 500, crop: 'fill' })}" class="gallery-img" loading="lazy">
+                        </div>
+                    `).join('');
+                }
+            }
+
+            // Forzar el idioma actual para refrescar el DOM
+            applyLanguage(currentLang);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set Copyright Year
+            const yearEl = document.getElementById('copyright-year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+            // Init State
+            if (window.MENU_TECH_STATE) {
+                initApp(window.MENU_TECH_STATE);
+            }
+
+            // Listeners Idioma
+            const esBtn = document.getElementById('lang-es');
+            const enBtn = document.getElementById('lang-en');
+            if (esBtn) esBtn.addEventListener('click', () => applyLanguage('es'));
+            if (enBtn) enBtn.addEventListener('click', () => applyLanguage('en'));
+
+            // Navbar Mobile Trigger
+            const navbarToggler = document.getElementById('navbar-toggler');
+            const navMenu = document.getElementById('nav-menu');
+
+            navbarToggler.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                const icons = navbarToggler.querySelectorAll('.toggler-icon');
+                icons.forEach((icon, index) => {
+                    if (navMenu.classList.contains('active')) {
+                        if (index === 0) icon.style.transform = 'rotate(45deg) translate(6px, 6px)';
+                        if (index === 1) icon.style.opacity = '0';
+                        if (index === 2) icon.style.transform = 'rotate(-45deg) translate(5px, -5px)';
+                    } else {
+                        icon.style.transform = 'none';
+                        icon.style.opacity = '1';
+                    }
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!navbarToggler.contains(e.target) && !navMenu.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                    navbarToggler.querySelectorAll('.toggler-icon').forEach(icon => {
+                        icon.style.transform = 'none';
+                        icon.style.opacity = '1';
+                    });
+                }
+            });
+
+            // Intersection Observer Animation Flow
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section').forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(40px)';
+                section.style.transition = 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
